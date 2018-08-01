@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{68F0E234-3760-409D-A8F7-CDD1FEBEA870}</ProjectGuid>
+    <ProjectGuid>{C463EA58-DF10-47CD-A8C1-5ACED8F44625}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Challenge_1</RootNamespace>
-    <AssemblyName>Challenge_1</AssemblyName>
+    <RootNamespace>Challenge_2</RootNamespace>
+    <AssemblyName>Challenge_2</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,16 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MenuItem.cs" />
-    <Compile Include="MenuRepository.cs" />
+    <Compile Include="Claims.cs" />
+    <Compile Include="ClaimsRepository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="TextFile1.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

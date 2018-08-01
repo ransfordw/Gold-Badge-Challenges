@@ -1,0 +1,93 @@
+﻿public void CreateNewMenuItem()
+        {
+            Console.WriteLine("Menu item number: ");
+            var number = Console.ReadLine();
+            var mealNum = Int32.Parse(number);
+
+            Console.WriteLine("Meal name: ");
+            string mealName = Console.ReadLine();
+
+            Console.WriteLine("Meal description: ");
+            var description = Console.ReadLine();
+
+            Console.WriteLine("Meal price: ");
+            string priceString = Console.ReadLine();
+            decimal price = decimal.Parse(priceString);
+
+            bool ingredientsLoop = true;
+
+            List<String> _ingredientsFromConsole = new List<string>();
+
+            while (ingredientsLoop)
+            {
+                Console.WriteLine("Name an ingredient: ");
+                var ingredient = Console.ReadLine();
+                _ingredientsFromConsole.Add(ingredient);
+
+                Console.WriteLine("Would you like to add another ingredient? y/n");
+                var response = Console.ReadLine();
+
+                if (response == "n")
+                    ingredientsLoop = false;
+            }
+
+            MenuItem newMenuItem = new MenuItem()
+            {
+                MealNumber = mealNum,
+                MealName = mealName,
+                Description = description,
+                Ingredients = _ingredientsFromConsole.ToString(),
+                MealPrice = price
+            };
+            //return newMenuItem;
+        }
+
+
+
+
+
+
+
+		 public MenuItem CreateNewMenuItem()
+        {
+            Console.WriteLine("Menu item number: ");
+            var number = Console.ReadLine();
+            var MealNumber = Int32.Parse(number);
+
+            Console.WriteLine("Meal name: ");
+            string MealName = Console.ReadLine();
+
+            Console.WriteLine("Meal description: ");
+            var Description = Console.ReadLine();
+
+            Console.WriteLine("Meal price: ");
+            string priceString = Console.ReadLine();
+            decimal Price = decimal.Parse(priceString);
+
+            bool ingredientsLoop = true;
+
+            List<String> _ingredientsFromConsole = new List<string>();
+
+            while (ingredientsLoop)
+            {
+                Console.WriteLine("Name an ingredient: ");
+                var ingredient = Console.ReadLine();
+                _ingredientsFromConsole.Add(ingredient);
+
+                Console.WriteLine("Would you like to add another ingredient? y/n");
+                var response = Console.ReadLine();
+
+                if (response == "n")
+                    ingredientsLoop = false;
+            }
+
+            /*MenuItem newMenuItem = new MenuItem()
+            {
+                MealNumber = mealNum,
+                MealName = mealName,
+                Description = description,
+                Ingredients = _ingredientsFromConsole.ToString(),
+                MealPrice = price
+            };
+            return newMenuItem;*/
+        }

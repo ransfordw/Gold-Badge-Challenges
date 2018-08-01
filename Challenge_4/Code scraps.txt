@@ -1,0 +1,21 @@
+﻿/*Console.WriteLine("Assgin one door access code: (A5, B3, C2, ect.)");
+                    _doorAccessList.AddDoorToList(Console.ReadLine());
+
+                    Console.WriteLine("Would you like to add another door? y/n");
+                    var addDoorResponse = Console.ReadLine();
+
+                    while (addDoorResponse != "n")
+                    {
+                        Console.WriteLine("Assgin one door access code: (A5, B3, C2, ect.)");
+                        _doorAccessList.AddDoorToList(Console.ReadLine());
+                        Console.WriteLine("Do you wish to add another door? y/n");
+                        addDoorResponse = Console.ReadLine();
+                    }*/
+
+
+					 /*StringBuilder builder = new StringBuilder();
+                    foreach (string newDoor in _newDoorsFromConsole)
+                    {
+                        builder.Append(newDoor).Append(", ");
+                    }
+                    string result = builder.ToString();*/
