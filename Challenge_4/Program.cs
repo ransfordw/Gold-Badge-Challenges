@@ -12,19 +12,20 @@ namespace Challenge_4
         {
             Badge badge = new Badge();
             BadgeRepository badgeRepo = new BadgeRepository();
-            //List<string> doorAccessList = badgeRepo.GetList();
             Dictionary<int, List<string>> BadgeID = badgeRepo.GetDictionary();
+            List<string> listOne = new List<string>();
+            listOne.Add("A1");
+            listOne.Add("A2");
+            Badge one = new Badge(123, listOne);
 
-
-            int response = 0;
-            while (response != 4)
+            string response = null;
+            while (response != "4")
             {
                 Console.WriteLine($"Hello Security Admin!\n\nWhat would you like to do?\n\n1. Add a badge\n2. Edit a badge\n3. List all badges\n4. Exit program\n");
-                int newResponse = Int32.Parse(Console.ReadLine());
+                response = Console.ReadLine();
                 Console.Clear();
-                if (newResponse == 1)
+                if (response == "1")
                 {
-
                     Console.WriteLine("Enter badge ID number:");
                     badge.BadgeNum = Int32.Parse(Console.ReadLine());
 
@@ -44,15 +45,15 @@ namespace Challenge_4
                     }
                     badge.DoorList = _newDoorsFromConsole;
                     badgeRepo.AddBadgeToDictionary(badge);
-
+                    Console.Clear();
                 }
-                if (newResponse == 2)
+                if (response == "2")
                 {
                     Console.WriteLine("Which badge would you like to edit?");
                     var desiredKey = Int32.Parse(Console.ReadLine());
                     List<string> newDoorList = BadgeID[desiredKey];
                     var doorString = badgeRepo.ListToString(newDoorList);
-                    Console.WriteLine($"Badge: {desiredKey} has access to doors {doorString}\n\n");
+                    Console.WriteLine($"\nBadge: {desiredKey} has access to doors {doorString}\n");
                     Console.WriteLine($"What would you like to change?\n\t1. Remove a door\n\t2. Add a door\n\t3. Change nothing");
                     var updateResponse = Int32.Parse(Console.ReadLine());
                     if (updateResponse == 1)
@@ -61,7 +62,6 @@ namespace Challenge_4
                         string removeResponse = "y";
                         while (removeResponse != "n")
                         {
-
                             Console.WriteLine("Which door would you like to remove?");
                             var removeDoor = Console.ReadLine();
                             newDoorList.Remove(removeDoor);
@@ -74,15 +74,15 @@ namespace Challenge_4
                             Console.WriteLine("Enter door to be added.");
                             var newDoor = Console.ReadLine();
                             newDoorList.Add(newDoor);
-                            //Console.WriteLine($"Badge: {desiredKey} now has access to doors {doorString}\n\n");
                             Console.WriteLine("Would you like to add another door? y/n");
                             var newDoorResponse = Console.ReadLine();
                             if (newDoorResponse == "y")
-                            updateResponse = 2;
+                                updateResponse = 2;
                             else updateResponse = 4;
                         }
+                    Console.Clear();
                 }
-                if (newResponse == 3)
+                if (response == "3")
                 {
                     Console.WriteLine($"Here is a list of current badges: \n\nBadge ID number\t\tDoor Access\n");
 
@@ -91,9 +91,12 @@ namespace Challenge_4
                         var doorString = badgeRepo.ListToString(newBadgeID.Value);
                         Console.WriteLine($"{newBadgeID.Key}\t\t{doorString}");
                     }
+                    Console.WriteLine("Prese 'enter' to return to main menu.");
                     Console.ReadLine();
-                }if (newResponse == 4)
-                break;
+                    Console.Clear();
+                }
+                if (response == "4")
+                    break;
             }
         }
     }

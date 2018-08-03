@@ -66,6 +66,7 @@ namespace Challenge_1
                     {
                         builder.Append(ingredient).Append(", ");
                     }
+                    builder.Length -= 2;
                     string result = builder.ToString();
 
                     MenuItem newMenuItem = new MenuItem()

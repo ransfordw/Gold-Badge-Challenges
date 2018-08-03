@@ -17,6 +17,5 @@ namespace Challenge_4
 
         public int BadgeNum { get; set; }
         public List<string> DoorList { get; set; }
-
     }
 }

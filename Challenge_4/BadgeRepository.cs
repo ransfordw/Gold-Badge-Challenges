@@ -43,14 +43,9 @@ namespace Challenge_4
             {
                 builder.Append(door).Append(", ");
             }
+            builder.Length -= 2;
             string result = builder.ToString();
             return result;
         }
-           /*StringBuilder builder = new StringBuilder();
-           foreach (string newDoor in _newDoorsFromConsole)
-           {
-               builder.Append(newDoor).Append(", ");
-           }
-           string result = builder.ToString();*/
     }
 }
