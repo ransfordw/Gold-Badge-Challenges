@@ -8,6 +8,8 @@ namespace Challenge_5
 {
     class Program
     {
+
+        //This challenge is not at all finished
         static void Main(string[] args)
         {
             CustomerRepository customerRepo = new CustomerRepository();
@@ -64,8 +66,8 @@ namespace Challenge_5
                         var updateType = Console.ReadLine();
                         if (updateType == "1")
 
-
-                        break;
+                         
+                            break;
                     case 4:
                         //Only removes added customers. Not ones that are hard coded in.
                         Console.WriteLine($"Which customer would you like to remove?\n Enter First Name:");
